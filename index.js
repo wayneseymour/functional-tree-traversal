@@ -8,12 +8,19 @@ class Node extends Tree {
     this.left = left;
     this.right = right;
   }
+
+  matchWith(pattern) {
+    return pattern.Node(this.left, this.v, this.right);
+  }
 }
 
 class Leaf extends Tree {
   constructor(v) {
     super()
     this.v = v;
+  }
+  matchWith( pattern) {
+    return  pattern.Leaf(this.v);
   }
 }
 
