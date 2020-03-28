@@ -1,7 +1,7 @@
-class Tree {
+export class Tree {
 }
 
-class Node extends Tree {
+export class Node extends Tree {
   constructor(left, v, right) {
     super()
     this.v = v;
@@ -18,7 +18,7 @@ class Node extends Tree {
   }
 }
 
-class Leaf extends Tree {
+export class Leaf extends Tree {
   constructor(v) {
     super()
     this.v = v;
@@ -40,10 +40,4 @@ Tree.prototype.reverse = function () {
     Node: (left, v, right) => new Node(right.reverse(), v, left.reverse())
   });
 }
-const treeInstance =
-  new Node(new Node(new Leaf(2), 4, new Leaf(2)), 6, new Node(new Leaf(7), 8, new Leaf(9)));
 
-console.log(treeInstance.toString());
-
-const reverse = treeInstance.reverse();
-console.log(reverse.toString())
